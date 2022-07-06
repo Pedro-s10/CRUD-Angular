@@ -34,7 +34,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  @ViewChild(MatTable)
+  @ViewChild(MatTable) //pegar um id filho 
   table!: MatTable<any>
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol', 'actions'];
   dataSource = ELEMENT_DATA;
@@ -68,8 +68,10 @@ export class HomeComponent implements OnInit {
       }
       
     });
+  }
 
-
+  deleteElement(position: number): void {
+    this.dataSource = this.dataSource.filter(p => p.position !== position);
   }
 
 }
