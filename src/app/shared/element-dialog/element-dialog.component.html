@@ -2,20 +2,20 @@
 <h1 *ngIf="isChange"mat-dialog-title>Edit element</h1><!-- (*ngif="isChange") Se for verdadeira vai editar -->
 <div mat-dialog-content>
   <mat-form-field>
-    <mat-label> Position </mat-label>
-    <input matInput [(ngModel)]="data.position">
+    <mat-label> identifier </mat-label>
+    <input matInput [(ngModel)]="data.identifier">
   </mat-form-field>
   <mat-form-field>
     <mat-label>Name</mat-label>
     <input matInput [(ngModel)]="data.name">
   </mat-form-field>
   <mat-form-field >
-    <mat-label>Weight</mat-label>
-    <input matInput [(ngModel)]="data.weight">
+    <mat-label>number</mat-label>
+    <input matInput [(ngModel)]="data.number">
   </mat-form-field>
   <mat-form-field>
-    <mat-label>Symbol</mat-label>
-    <input matInput [(ngModel)]="data.symbol">
+    <mat-label>description</mat-label>
+    <input matInput [(ngModel)]="data.description">
   </mat-form-field>
 </div>
 <div mat-dialog-actions>

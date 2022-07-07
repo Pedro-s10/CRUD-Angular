@@ -10,22 +10,19 @@ import { MatDialog } from '@angular/material/dialog';
 
 export interface PeriodicElement {
   name: string;
-  position: number;
-  weight: number;
-  symbol: string;
+  identifier: number;
+  number: number;
+  description: string;
 }
 
 const ELEMENT_DATA: PeriodicElement[] = [
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
-  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
-  {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
-  {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be'},
-  {position: 5, name: 'Boron', weight: 10.811, symbol: 'B'},
-  {position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C'},
-  {position: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N'},
-  {position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O'},
-  {position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F'},
-  {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne'},
+  {identifier: 1, name: 'Placa da video', number: 13123213123123123, description: 'Placa De Vídeo Asus Radeon RX 580 8GB'},
+  {identifier: 1, name: 'Placa da video', number: 13123213123123123, description: 'Placa de Vídeo Gigabyte - GeForce RTX 3050, 8GB GDDR6'},
+  {identifier: 3, name: 'SSD', number: 13123213123123123, description: 'WD Green™ PC SN350 NVMe™ SSD 480GB'},
+  {identifier: 2, name: 'MEMORIA RAM', number: 13123213123123123, description: 'CORSAIR Memória de desktop VENGEANCE RGB PRO 32GB'},
+  {identifier: 1, name: 'Placa da video', number: 13123213123123123, description: 'PLACA DE VIDEO ASUS GEFORCE GTX 1650 TUF GAMING OC EDITION 4GB GDDR6 TUF-GTX1650-O4GD6-P-GAMING'},
+  
+  
 ];
 
 @Component({
@@ -36,7 +33,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
 export class HomeComponent implements OnInit {
   @ViewChild(MatTable) //pegar um id filho 
   table!: MatTable<any>
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol', 'actions'];
+  displayedColumns: string[] = ['identifier', 'name', 'number', 'description', 'actions'];
   dataSource = ELEMENT_DATA;
 
   constructor(public dialog: MatDialog) {}
@@ -48,23 +45,23 @@ export class HomeComponent implements OnInit {
     const dialogRef = this.dialog.open(ElementDialogComponent, {
       width: '250px',
       data: element === null ? {
-        position: null,
+        identifier: null,
         name: '',
-        weight: null,
-        symbol: ''
+        number: null,
+        description: ''
       } : {
         // id: element.id,
-        position: element.position,
+        identifier: element.identifier,
         name: element.name,
-        weight: element.weight,
-        symbol: element.symbol
+        number: element.number,
+        description: element.description
       }
     });
 
     dialogRef.afterClosed().subscribe(result => {
       if(result !== undefined){
-        if (this.dataSource.map(p => p.position).includes(result.position)) {
-          this.dataSource[result.position - 1] = result;
+        if (this.dataSource.map(p => p.identifier).includes(result.identifier)) {
+          this.dataSource[result.identifier - 1] = result;
           this.table.renderRows();
         }else {
           this.dataSource.push(result);
@@ -79,7 +76,7 @@ export class HomeComponent implements OnInit {
   }
 
   deleteElement(position: number): void {
-    this.dataSource = this.dataSource.filter(p => p.position !== position);
+    this.dataSource = this.dataSource.filter(p => p.identifier !== position);
   }
 
 }
