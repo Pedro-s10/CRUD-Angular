@@ -16,11 +16,11 @@ export interface PeriodicElement {
 }
 
 const ELEMENT_DATA: PeriodicElement[] = [
-  {identifier: 1, name: 'Placa da video', number: 13123213123123123, description: 'Placa De Vídeo Asus Radeon RX 580 8GB'},
-  {identifier: 1, name: 'Placa da video', number: 13123213123123123, description: 'Placa de Vídeo Gigabyte - GeForce RTX 3050, 8GB GDDR6'},
-  {identifier: 3, name: 'SSD', number: 13123213123123123, description: 'WD Green™ PC SN350 NVMe™ SSD 480GB'},
-  {identifier: 2, name: 'MEMORIA RAM', number: 13123213123123123, description: 'CORSAIR Memória de desktop VENGEANCE RGB PRO 32GB'},
-  {identifier: 1, name: 'Placa da video', number: 13123213123123123, description: 'PLACA DE VIDEO ASUS GEFORCE GTX 1650 TUF GAMING OC EDITION 4GB GDDR6 TUF-GTX1650-O4GD6-P-GAMING'},
+  {identifier: 1, name: 'Placa da video', number: 89323513, description: 'Placa De Vídeo Asus Radeon RX 580 8GB'},
+  {identifier: 1, name: 'Placa da video', number:67723513, description: 'Placa de Vídeo Gigabyte - GeForce RTX 3050, 8GB GDDR6'},
+  {identifier: 3, name: 'SSD', number: 54423583, description: 'WD Green™ PC SN350 NVMe™ SSD 480GB'},
+  {identifier: 2, name: 'MEMORIA RAM', number: 23326789, description: 'CORSAIR Memória de desktop VENGEANCE RGB PRO 32GB'},
+  {identifier: 1, name: 'Placa da video', number: 25523891, description: 'PLACA DE VIDEO ASUS GEFORCE GTX 1650 TUF GAMING OC EDITION 4GB GDDR6 TUF-GTX1650-O4GD6-P-GAMING'},
   
   
 ];
