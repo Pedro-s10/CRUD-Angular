@@ -14,9 +14,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { ElementDialogComponent } from './shared/element-dialog/element-dialog.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { FormsModule } from '@angular/forms'
+import { FormsModule } from '@angular/forms';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-
 
 @NgModule({
   declarations: [
@@ -24,13 +23,13 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
     HomeComponent,
     HeaderComponent,
     FooterComponent,
-    ElementDialogComponent
+    ElementDialogComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MatToolbarModule,
-    MatTableModule, 
+    MatTableModule,
     MatButtonModule,
     MatIconModule,
     MatDialogModule,
@@ -40,6 +39,6 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
     NoopAnimationsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

@@ -1,25 +1,38 @@
-<h1 *ngIf="!isChange" at-dialog-title>Create element</h1> <!-- (*ngif="!isChange") Se for falsa vai criar -->
-<h1 *ngIf="isChange"mat-dialog-title>Edit element</h1><!-- (*ngif="isChange") Se for verdadeira vai editar -->
+<h1 *ngIf="!isChange" at-dialog-title>Create element</h1>
+<!-- (*ngif="!isChange") Se for falsa vai criar -->
+<h1 *ngIf="isChange" mat-dialog-title>Edit element</h1>
+<!-- (*ngif="isChange") Se for verdadeira vai editar -->
 <div mat-dialog-content>
   <mat-form-field>
     <mat-label> identifier </mat-label>
-    <input matInput [(ngModel)]="data.identifier">
+    <input matInput [(ngModel)]="data.identifier" />
   </mat-form-field>
   <mat-form-field>
     <mat-label>Name</mat-label>
-    <input matInput [(ngModel)]="data.name">
+    <input matInput [(ngModel)]="data.name" />
   </mat-form-field>
-  <mat-form-field >
+  <mat-form-field>
     <mat-label>number</mat-label>
-    <input matInput [(ngModel)]="data.number">
+    <input matInput [(ngModel)]="data.number" />
   </mat-form-field>
   <mat-form-field>
     <mat-label>description</mat-label>
-    <input matInput [(ngModel)]="data.description">
+    <input matInput [(ngModel)]="data.description" />
   </mat-form-field>
 </div>
 <div mat-dialog-actions>
   <button mat-button (click)="onCancel()">Cancel</button>
-  <button mat-button *ngIf="!isChange" [mat-dialog-close]="data" cdkFocusInitial>Create</button> <!-- (*ngif="!isChange") Se for falsa vai criar -->
-  <button mat-button *ngIf="isChange" [mat-dialog-close]="data" cdkFocusInitial>Ok</button> <!-- (*ngif="isChange") Se for verdadeira vai editar -->
+  <button
+    mat-button
+    *ngIf="!isChange"
+    [mat-dialog-close]="data"
+    cdkFocusInitial
+  >
+    Create
+  </button>
+  <!-- (*ngif="!isChange") Se for falsa vai criar -->
+  <button mat-button *ngIf="isChange" [mat-dialog-close]="data" cdkFocusInitial>
+    Ok
+  </button>
+  <!-- (*ngif="isChange") Se for verdadeira vai editar -->
 </div>
